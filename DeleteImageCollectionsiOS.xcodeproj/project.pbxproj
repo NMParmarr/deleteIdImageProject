@@ -16,6 +16,10 @@
 		1FA48FC32B0CCFD000AA0169 /* DeleteImageCollectionsiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FC22B0CCFD000AA0169 /* DeleteImageCollectionsiOSTests.swift */; };
 		1FA48FCD2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FCC2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITests.swift */; };
 		1FA48FCF2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FCE2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITestsLaunchTests.swift */; };
+		1FA48FDF2B0CD0F900AA0169 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FDE2B0CD0F900AA0169 /* ImageModel.swift */; };
+		1FA48FE12B0CD1A600AA0169 /* ImagesDataResourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FE02B0CD1A600AA0169 /* ImagesDataResourses.swift */; };
+		1FA48FE42B0CD3D600AA0169 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FE32B0CD3D600AA0169 /* ImageCollectionViewCell.swift */; };
+		1FA48FE72B0CD6D800AA0169 /* DeleteImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FE62B0CD6D800AA0169 /* DeleteImageProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		1FA48FC82B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeleteImageCollectionsiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA48FCC2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageCollectionsiOSUITests.swift; sourceTree = "<group>"; };
 		1FA48FCE2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageCollectionsiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1FA48FDE2B0CD0F900AA0169 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		1FA48FE02B0CD1A600AA0169 /* ImagesDataResourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesDataResourses.swift; sourceTree = "<group>"; };
+		1FA48FE32B0CD3D600AA0169 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		1FA48FE62B0CD6D800AA0169 /* DeleteImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +107,16 @@
 		1FA48FAA2B0CCFCE00AA0169 /* DeleteImageCollectionsiOS */ = {
 			isa = PBXGroup;
 			children = (
+				1FA48FDC2B0CD0D100AA0169 /* Models */,
+				1FA48FE52B0CD6B100AA0169 /* Protocols */,
+				1FA48FDD2B0CD0DD00AA0169 /* ViewModel */,
+				1FA48FE22B0CD3AD00AA0169 /* CollectionViewCell */,
 				1FA48FAB2B0CCFCE00AA0169 /* AppDelegate.swift */,
 				1FA48FAD2B0CCFCE00AA0169 /* SceneDelegate.swift */,
 				1FA48FAF2B0CCFCE00AA0169 /* ViewController.swift */,
+				1FA48FB62B0CCFD000AA0169 /* LaunchScreen.storyboard */,
 				1FA48FB12B0CCFCE00AA0169 /* Main.storyboard */,
 				1FA48FB42B0CCFD000AA0169 /* Assets.xcassets */,
-				1FA48FB62B0CCFD000AA0169 /* LaunchScreen.storyboard */,
 				1FA48FB92B0CCFD000AA0169 /* Info.plist */,
 			);
 			path = DeleteImageCollectionsiOS;
@@ -125,6 +137,38 @@
 				1FA48FCE2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITestsLaunchTests.swift */,
 			);
 			path = DeleteImageCollectionsiOSUITests;
+			sourceTree = "<group>";
+		};
+		1FA48FDC2B0CD0D100AA0169 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1FA48FDE2B0CD0F900AA0169 /* ImageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1FA48FDD2B0CD0DD00AA0169 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1FA48FE02B0CD1A600AA0169 /* ImagesDataResourses.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1FA48FE22B0CD3AD00AA0169 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1FA48FE32B0CD3D600AA0169 /* ImageCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		1FA48FE52B0CD6B100AA0169 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1FA48FE62B0CD6D800AA0169 /* DeleteImageProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +302,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FA48FE42B0CD3D600AA0169 /* ImageCollectionViewCell.swift in Sources */,
+				1FA48FE72B0CD6D800AA0169 /* DeleteImageProtocol.swift in Sources */,
 				1FA48FB02B0CCFCE00AA0169 /* ViewController.swift in Sources */,
 				1FA48FAC2B0CCFCE00AA0169 /* AppDelegate.swift in Sources */,
 				1FA48FAE2B0CCFCE00AA0169 /* SceneDelegate.swift in Sources */,
+				1FA48FE12B0CD1A600AA0169 /* ImagesDataResourses.swift in Sources */,
+				1FA48FDF2B0CD0F900AA0169 /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
