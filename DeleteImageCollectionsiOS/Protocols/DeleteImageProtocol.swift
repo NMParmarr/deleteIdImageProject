@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DeleteImageProtocol {
-    func deleteImage(imageId:Int)
+    func deleteImage(imageId:String)
 }

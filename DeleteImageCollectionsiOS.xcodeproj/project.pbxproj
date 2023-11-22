@@ -17,9 +17,10 @@
 		1FA48FCD2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FCC2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITests.swift */; };
 		1FA48FCF2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FCE2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITestsLaunchTests.swift */; };
 		1FA48FDF2B0CD0F900AA0169 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FDE2B0CD0F900AA0169 /* ImageModel.swift */; };
-		1FA48FE12B0CD1A600AA0169 /* ImagesDataResourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FE02B0CD1A600AA0169 /* ImagesDataResourses.swift */; };
+		1FA48FE12B0CD1A600AA0169 /* ImagesDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FE02B0CD1A600AA0169 /* ImagesDataViewModel.swift */; };
 		1FA48FE42B0CD3D600AA0169 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FE32B0CD3D600AA0169 /* ImageCollectionViewCell.swift */; };
 		1FA48FE72B0CD6D800AA0169 /* DeleteImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA48FE62B0CD6D800AA0169 /* DeleteImageProtocol.swift */; };
+		737D0EB12B0E2CD80099B2BB /* NewImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D0EB02B0E2CD80099B2BB /* NewImageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +55,10 @@
 		1FA48FCC2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageCollectionsiOSUITests.swift; sourceTree = "<group>"; };
 		1FA48FCE2B0CCFD000AA0169 /* DeleteImageCollectionsiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageCollectionsiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1FA48FDE2B0CD0F900AA0169 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
-		1FA48FE02B0CD1A600AA0169 /* ImagesDataResourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesDataResourses.swift; sourceTree = "<group>"; };
+		1FA48FE02B0CD1A600AA0169 /* ImagesDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesDataViewModel.swift; sourceTree = "<group>"; };
 		1FA48FE32B0CD3D600AA0169 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		1FA48FE62B0CD6D800AA0169 /* DeleteImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageProtocol.swift; sourceTree = "<group>"; };
+		737D0EB02B0E2CD80099B2BB /* NewImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +152,8 @@
 		1FA48FDD2B0CD0DD00AA0169 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1FA48FE02B0CD1A600AA0169 /* ImagesDataResourses.swift */,
+				1FA48FE02B0CD1A600AA0169 /* ImagesDataViewModel.swift */,
+				737D0EB02B0E2CD80099B2BB /* NewImageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -305,9 +308,10 @@
 				1FA48FE42B0CD3D600AA0169 /* ImageCollectionViewCell.swift in Sources */,
 				1FA48FE72B0CD6D800AA0169 /* DeleteImageProtocol.swift in Sources */,
 				1FA48FB02B0CCFCE00AA0169 /* ViewController.swift in Sources */,
+				737D0EB12B0E2CD80099B2BB /* NewImageViewModel.swift in Sources */,
 				1FA48FAC2B0CCFCE00AA0169 /* AppDelegate.swift in Sources */,
 				1FA48FAE2B0CCFCE00AA0169 /* SceneDelegate.swift in Sources */,
-				1FA48FE12B0CD1A600AA0169 /* ImagesDataResourses.swift in Sources */,
+				1FA48FE12B0CD1A600AA0169 /* ImagesDataViewModel.swift in Sources */,
 				1FA48FDF2B0CD0F900AA0169 /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,41 +11,52 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let imageViewModel = ImagesDataViewModel()
-    
-    var index:Int!
-    
-    var counterId = 12
+    private let imageVM = NewImageViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.allowsMultipleSelection = true
     }
     @IBAction func addImageAction(_ sender: Any) {
-        counterId += 1
-        imageViewModel.imagesList.append(
-            ImageModel(id: counterId, imageName:imageViewModel.images.randomElement()!)
-        )
+        imageVM.addImage()
         collectionView.reloadData()
     }
-    
+    @IBAction func deleteSelectedImages(_ sender: Any) {
+        print("Selected image deleted")
+        collectionView.reloadData()
+    }
 }
 
 extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        imageViewModel.imagesList.count
+        imageVM.imagesList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.identifier, for: indexPath
-        ) as! ImageCollectionViewCell
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.identifier, for: indexPath
+        ) as? ImageCollectionViewCell else {
+            return .init()
+        }
+        
         cell.deleteImageDelegate = self
-        cell.setCellImage(cellImage:  imageViewModel.imagesList[indexPath.row])
+        
+        cell.configure(with: imageVM.imagesList[indexPath.row])
+
+        cell.selectImage = { [self] id in
+            if let index = imageVM.imagesList.firstIndex(where: { $0.id == id }) {
+                self.imageVM.imagesList[index].isSelected.toggle()
+                self.collectionView.reloadData()
+            }
+        }
         
         return cell
     }
+    
+
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout{
@@ -57,15 +68,9 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
 }
 
 extension ViewController: DeleteImageProtocol{
-    func deleteImage(imageId: Int) {
-        if imageViewModel.imagesList.contains(where: {$0.id == imageId}){
-            index = imageViewModel.imagesList.firstIndex{$0.id == imageId}
-            if let index = index {
-                imageViewModel.imagesList.remove(at: index)
-                print("image id : \(imageId) -- index : \(index)")
-                
-                collectionView.reloadData()
-            }
-        }
+    func deleteImage(imageId: String) {
+        imageVM.deleteImage(imageId: imageId)
+        
+        collectionView.reloadData()
     }
 }

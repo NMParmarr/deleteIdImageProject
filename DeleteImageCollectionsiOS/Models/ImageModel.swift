@@ -7,12 +7,8 @@
 
 import Foundation
 
-class ImageModel {
-    let id:Int
-    let imageName:String
-    
-    init(id:Int, imageName:String){
-        self.id = id
-        self.imageName = imageName
-    }
+struct ImageModel {
+    let id: String = UUID().uuidString
+    let imageName: String
+    var isSelected: Bool = false
 }

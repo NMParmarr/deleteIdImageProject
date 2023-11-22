@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -38,13 +39,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="161" height="142"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fu-o5-zg6">
-                                                    <rect key="frame" x="126" y="5" width="30" height="30"/>
+                                                    <rect key="frame" x="126" y="10" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="Qse-Cn-5iW"/>
-                                                        <constraint firstAttribute="height" constant="30" id="rvT-b2-jdu"/>
+                                                        <constraint firstAttribute="width" constant="25" id="Qse-Cn-5iW"/>
+                                                        <constraint firstAttribute="height" constant="25" id="rvT-b2-jdu"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system">
+                                                    <buttonConfiguration key="configuration" style="plain">
+                                                        <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
                                                         <backgroundConfiguration key="background">
                                                             <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                         </backgroundConfiguration>
@@ -54,12 +56,30 @@
                                                         <action selector="deleteImageAction:" destination="diS-XZ-wua" eventType="touchUpInside" id="PLn-9R-xRM"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzS-mD-Jbo">
+                                                    <rect key="frame" x="10" y="10" width="25" height="25"/>
+                                                    <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="PTK-v1-2QR"/>
+                                                        <constraint firstAttribute="width" constant="25" id="jNs-7L-elb"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="">
+                                                        <imageReference key="image" image="checkmark.square" catalog="system" symbolScale="large"/>
+                                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="selectImageAction:" destination="diS-XZ-wua" eventType="touchUpInside" id="8tc-el-rXb"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Isg-8v-Ojv" firstAttribute="top" secondItem="rE0-0z-F0V" secondAttribute="top" id="7Jl-9q-y3T"/>
+                                                <constraint firstItem="EzS-mD-Jbo" firstAttribute="top" secondItem="rE0-0z-F0V" secondAttribute="top" constant="10" id="M3I-Tz-fSh"/>
                                                 <constraint firstAttribute="trailing" secondItem="Isg-8v-Ojv" secondAttribute="trailing" id="P0y-9S-bAk"/>
-                                                <constraint firstAttribute="trailing" secondItem="7Fu-o5-zg6" secondAttribute="trailing" constant="5" id="aot-5T-Ns5"/>
-                                                <constraint firstItem="7Fu-o5-zg6" firstAttribute="top" secondItem="rE0-0z-F0V" secondAttribute="top" constant="5" id="hRo-5I-pFr"/>
+                                                <constraint firstItem="EzS-mD-Jbo" firstAttribute="leading" secondItem="rE0-0z-F0V" secondAttribute="leading" constant="10" id="Y05-jH-M1S"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Fu-o5-zg6" secondAttribute="trailing" constant="10" id="aot-5T-Ns5"/>
+                                                <constraint firstItem="7Fu-o5-zg6" firstAttribute="top" secondItem="rE0-0z-F0V" secondAttribute="top" constant="10" id="hRo-5I-pFr"/>
                                                 <constraint firstItem="Isg-8v-Ojv" firstAttribute="leading" secondItem="rE0-0z-F0V" secondAttribute="leading" id="j4K-bw-o0g"/>
                                                 <constraint firstAttribute="bottom" secondItem="Isg-8v-Ojv" secondAttribute="bottom" id="ywh-di-VPV"/>
                                             </constraints>
@@ -67,6 +87,7 @@
                                         <size key="customSize" width="161" height="142"/>
                                         <connections>
                                             <outlet property="imageView" destination="Isg-8v-Ojv" id="pyu-nz-5cs"/>
+                                            <outlet property="selectButton" destination="EzS-mD-Jbo" id="AH4-Qg-uC8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -82,6 +103,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Image Collectionss.." largeTitleDisplayMode="always" id="dnA-6k-yOZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="RpF-ja-nGL">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="deleteSelectedImages:" destination="BYZ-38-t0r" id="zEi-5i-0Ou"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="80P-Ru-agP">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
@@ -117,6 +144,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
